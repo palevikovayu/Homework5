@@ -1,0 +1,50 @@
+[
+  {
+    "class": "Mouse",
+    "id": 1,
+    "name": "mouse Logitech",
+    "cost": 21
+  },
+  {
+    "class": "Mouse",
+    "id": 2,
+    "name": "mouse DELL",
+    "cost": 25
+  },
+  {
+    "class": "Mouse",
+    "id": 3,
+    "name": "mouse Genius",
+    "cost": 30
+  },
+  {
+    "class": "Mouse",
+    "id": 3,
+    "name": "mouse Genius",
+    "cost": 30
+  },
+  {
+    "class": "Mouse",
+    "id": 3,
+    "name": "mouse Genius",
+    "cost": 30
+  },
+  {
+    "class": "Monitor",
+    "id": 5,
+    "name": "monitor LG",
+    "cost": 84
+  },
+   {
+     "class": "Keyboard",
+    "id": 6,
+    "name": "keyboard HP",
+    "cost": 43
+  },
+  {
+    "class": "Keyboard",
+    "id": 7,
+    "name": "keyboard Razer",
+    "cost": 47
+  }
+]
