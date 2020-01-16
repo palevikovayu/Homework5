@@ -1,11 +1,11 @@
 package com.company;
 
-public class Goods {
+public class Good {
     private long id;
     private String name;
     private double cost;
 
-    public Goods(long id, String name, double cost) {
+    public Good(long id, String name, double cost) {
         this.id = id;
         this.name = name;
         this.cost = cost;
@@ -44,7 +44,7 @@ public class Goods {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Goods good = (Goods) o;
+        Good good = (Good) o;
         if (id != good.id) return false;
         if (cost != good.cost) return false;
         return name != null ? name.equals(good.name) : good.name == null;

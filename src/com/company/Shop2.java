@@ -6,22 +6,29 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Shop2 implements InterfaceShop {
-    private Map<Goods, Integer> shop2GoodToAmount = new HashMap<>();
-    private Map<Long, Goods> shop2IdToGood = new HashMap<>();
-    private PayCheck check = new PayCheck();
-    private double totalPrice = 0;
+public class Shop2 implements Shop {
 
-    public Map<Goods, Integer> getShop2GoodToAmount() {
+    private Map<Good, Integer> shop2GoodToAmount = new HashMap<>();
+    private Map<Long, Good> shop2IdToGood = new HashMap<>();
+
+    public Map<Good, Integer> getShop2GoodToAmount() {
         return shop2GoodToAmount;
     }
 
-    public Map<Long, Goods> getShop2IdToGood() {
+    public void setShop2GoodToAmount(Map<Good, Integer> shop2GoodToAmount) {
+        this.shop2GoodToAmount = shop2GoodToAmount;
+    }
+
+    public Map<Long, Good> getShop2IdToGood() {
         return shop2IdToGood;
     }
 
+    public void setShop2IdToGood(Map<Long, Good> shop2IdToGood) {
+        this.shop2IdToGood = shop2IdToGood;
+    }
+
     @Override
-    public void addGoodToShop(Goods good) {
+    public void addGoodToShop(Good good) {
         if (good == null) {
             throw new IllegalArgumentException("Product shouldn't be null");
         } else {
@@ -43,18 +50,18 @@ public class Shop2 implements InterfaceShop {
             accumulator += s;
             s = bufferedReader.readLine();
         }
-        accumulator = accumulator.replace("[","");
-        accumulator = accumulator.replace("]","");
-        accumulator = accumulator.replaceAll("\\s+","");
+        accumulator = accumulator.replace("[", "");
+        accumulator = accumulator.replace("]", "");
+        accumulator = accumulator.replaceAll("\\s+", "");
         String[] split = accumulator.split("},\\{");
         List<String> listOfGoodsString = new ArrayList<>();
         for (String s1 : split) {
             String s2 = s1.replaceAll("\\{", "").replaceAll("}", "");
             listOfGoodsString.add(s2);
         }
-        List<Goods> listOfGoodsFromJson = new ArrayList<>();
+        List<Good> listOfGoodsFromJson = new ArrayList<>();
         for (String s3 : listOfGoodsString) {
-            listOfGoodsFromJson.add(createGood(s3));
+            listOfGoodsFromJson.add(createGoodFromJSON(s3));
         }
         for (int i = 0; i < listOfGoodsFromJson.size(); i++) {
             shop2IdToGood.put(listOfGoodsFromJson.get(i).getId(), listOfGoodsFromJson.get(i));
@@ -66,55 +73,28 @@ public class Shop2 implements InterfaceShop {
         }
     }
 
-    public static Goods createGood(String goodFromString) {
+    public static Good createGoodFromJSON(String goodFromString) {
         String[] pairs = goodFromString.split(",");
         String classString = pairs[0].split(":")[1];
         String idString = pairs[1].split(":")[1];
         String nameString = pairs[2].split(":")[1];
         String costString = pairs[3].split(":")[1];
-        Goods good = new Goods(Long.parseLong(idString), nameString, Double.parseDouble(costString));
-        return good;
-    }
-
-    public void addGoodToCheck2(Goods good) {
-        if (!shop2GoodToAmount.containsKey(good)) {
-
-        } else {
-            if (!check.getCheck().containsKey(good)) {
-                check.getCheck().put(good, 1);
-                totalPrice += good.getCost();
-            } else {
-                check.getCheck().replace(good, check.getCheck().get(good) + 1);
-                totalPrice += good.getCost();
-            }
-            if (shop2GoodToAmount.get(good) > check.getCheck().get(good)) {
-                shop2GoodToAmount.replace(good, shop2GoodToAmount.get(good) - 1);
-            } else {
-                shop2GoodToAmount.remove(good);
-            }
-        }
+        return new Good(Long.parseLong(idString), nameString, Double.parseDouble(costString));
     }
 
     @Override
     public PayCheck createPayCheck(List<Long> listOfRequiredId) {
-
+        PayCheck check = new PayCheck();
         for (int i = 0; i < listOfRequiredId.size(); i++) {
             if (shop2IdToGood.containsKey(listOfRequiredId.get(i))) {
-                addGoodToCheck2(shop2IdToGood.get(listOfRequiredId.get(i)));
+               check.addGoodToCheck2(shop2IdToGood.get(listOfRequiredId.get(i)));
             }
         }
         return check;
     }
 
-    public void printPayCheck() {
-        for (Map.Entry<Goods, Integer> entry : check.getCheck().entrySet()) {
-            System.out.println(entry.getKey() + " - " + entry.getValue() + " un.");
-        }
-        System.out.printf("------------------%nTotal price: %f %n", totalPrice);
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
+    public void printPayCheck(PayCheck check) {
+        check.createCheck();
     }
 
     public String toString() {
