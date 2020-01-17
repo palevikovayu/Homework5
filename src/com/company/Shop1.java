@@ -28,8 +28,13 @@ public class Shop1 implements Shop {
         for (int i = 0; i < listOfRequiredId.size(); i++) {
             for (int j = 0; j < listOfGoodsInShop.size(); j++) {
                 if (listOfRequiredId.get(i) == listOfGoodsInShop.get(j).getId()) {
-                   check.addGoodToCheck1(listOfGoodsInShop.get(j));
-                    return check;
+                    if (!listOfGoodsInShop.contains(listOfGoodsInShop.get(j))) {
+
+                    } else {
+                        check.addGoodToCheck(listOfGoodsInShop.get(j));
+                        listOfGoodsInShop.remove(listOfGoodsInShop.get(j));
+                        break;
+                    }
                 }
             }
         }
@@ -47,7 +52,7 @@ public class Shop1 implements Shop {
 
     public void addGoodToFileFromShop(Good product) {
         try (FileWriter fileWriter = new FileWriter("shop1.csv", true);
-        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)){
+             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
             bufferedWriter.append("\n" + product.getId() + ", \"" + product.getName() + "\", " + product.getCost());
         } catch (IOException e) {
             System.out.println(e.getMessage());

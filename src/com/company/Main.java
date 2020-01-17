@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Shop1 shop1 = new Shop1();
         ProductFileReader fileCSV = new ProductFileReader();
         try {
@@ -29,7 +29,7 @@ public class Main {
         Shop2 shop2 = new Shop2();
         ProductFileReader fileJSON = new ProductFileReader();
         try {
-            shop2.addGoodToShop2FromFile("shop2.json");
+            shop2.setShop2GoodToAmount(fileJSON.addGoodToShop2FromJSON("shop2.json"));
         } catch (IOException e) {
             shop2.addGoodToShop(new Mouse(1, "mouse Logitech", 21));
             shop2.addGoodToShop(new Mouse(2, "mouse DELL", 25));

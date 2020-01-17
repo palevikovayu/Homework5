@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="904da2e4-eba9-4466-8101-d9958cf3cbd4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/company/Shop1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Store/com/company/Goods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Store/com/company/InterfaceShop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Store/com/company/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Store/com/company/Keyboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Store/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Store/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Store/com/company/Monitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Store/com/company/Monitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Store/com/company/Mouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Store/com/company/Mouse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Store/com/company/PayCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Store/com/company/PayCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Store/com/company/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Store/com/company/Shop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Store/com/company/Shop1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Store/com/company/Shop1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Store/com/company/Shop2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Store/com/company/Shop2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/shop1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Goods.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Good.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/InterfaceShop.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Keyboard.java" afterDir="false" />
@@ -41,7 +34,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/com/company" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1TQ1cfKvmF3qimZVVkK0j6jUwgO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -137,16 +130,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="53" y="256" width="1127" height="728" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1573975390863" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
